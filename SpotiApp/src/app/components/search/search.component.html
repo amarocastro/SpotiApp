@@ -1,10 +1,8 @@
 <div class="row text-center">
     <div class="col">
         <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Browse artist..." />
+        <app-loading *ngIf="loading" class="m-5 text-center"></app-loading>
+
+        <app-card *ngIf="!loading" [items]="artists"></app-card>
     </div>
-
-    <app-loading *ngIf="loading" class="m-5"></app-loading>
-
-    <app-card *ngIf="!loading" [items]="artists"></app-card>
-
 </div>
